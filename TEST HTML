@@ -153,6 +153,9 @@
 
 <div id="gameContainer">
 
+    <button id="closeButton" onclick="closeGame()">
+        CLOSE
+
     <iframe id="gameFrame"></iframe>
 
 </div>
