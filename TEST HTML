@@ -149,6 +149,13 @@
         DONT CLICK
     </button>
 
+</div>
+
+<div id="gameContainer">
+
+    <iframe id="gameFrame"></iframe>
+
+</div>
 
 <script>
 function loadGame(url) {
