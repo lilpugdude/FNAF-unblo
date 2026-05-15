@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FNAF Gauntlet</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        background: linear-gradient(to bottom, #050505, #111);
+        color: white;
+        font-family: 'Press Start 2P', cursive;
+        overflow-x: hidden;
+    }
+
+    .topbar {
+        width: 100%;
+        text-align: center;
+        padding: 25px 0;
+        background: #0d0d0d;
+        border-bottom: 4px solid red;
+        box-shadow: 0 0 20px red;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .title {
+        font-size: 32px;
+        color: #ff2a2a;
+        text-shadow:
+            0 0 5px red,
+            0 0 10px red,
+            0 0 20px red;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 40px 20px 80px;
+        min-height: 100vh;
+    }
+
+    .gameButton {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 18px;
+        padding: 20px;
+        border: 4px solid #ff2a2a;
+        background: black;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+        box-shadow: 0 0 15px red;
+        width: 420px;
+        max-width: 90%;
+    }
+
+    .gameButton:hover {
+        background: #ff2a2a;
+        transform: scale(1.05);
+    }
+
+    #gameContainer {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        display: none;
+        z-index: 9999;
+    }
+
+    #gameFrame {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    #closeButton {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 10000;
+
+        font-family: 'Press Start 2P', cursive;
+        font-size: 12px;
+
+        background: black;
+        color: white;
+        border: 3px solid red;
+
+        padding: 12px;
+        cursor: pointer;
+
+        box-shadow: 0 0 10px red;
+    }
+
+    #closeButton:hover {
+        background: red;
+    }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+    <div class="title">FNAF GAUNTLET</div>
+</div>
+
+<div class="menu">
+
+    <button class="gameButton" onclick="loadGame('https://irv77.github.io/hd_fnaf/1/')">
+        FNAF 1
+    </button>
+
+    <button class="gameButton" onclick="loadGame('https://irv77.github.io/hd_fnaf/2/')">
+        FNAF 2
+    </button>
+
+    <button class="gameButton" onclick="loadGame('https://irv77.github.io/hd_fnaf/3/')">
+        FNAF 3
+    </button>
+
+    <button class="gameButton" onclick="loadGame('https://irv77.github.io/hd_fnaf/4/')">
+        FNAF 4
+    </button>
+
+    <button class="gameButton" onclick="loadGame('https://irv77.github.io/hd_fnaf/w/')">
+        FNAF World
+    </button>
+
+    <button class="gameButton" onclick="loadGame('https://irv77.github.io/hd_fnaf/sl/')">
+        FNAF Sister Location
+    </button>
+
+    <button class="gameButton" onclick="loadGame('https://irv77.github.io/hd_fnaf/ps/')">
+        FNAF Pizza Sim
+    </button>
+
+    <button class="gameButton" onclick="loadGame('https://irv77.github.io/hd_fnaf/ucn/')">
+        Ultimate Custom Night
+    </button>
+
+    <button class="gameButton" onclick="loadGame('https://fngames.io/coffin-of-andy-and-leyley.embed')">
+        DONT CLICK
+    </button>
+
+</div>
+
+<div id="gameContainer">
+
+    <button id="closeButton" onclick="closeGame()">
+        CLOSE
+    </button>
+
+    <iframe id="gameFrame"></iframe>
+
+</div>
+
+<script>
+function loadGame(url) {
+    document.getElementById("gameContainer").style.display = "block";
+    document.getElementById("gameFrame").src = url;
+}
+
+function closeGame() {
+    document.getElementById("gameContainer").style.display = "none";
+    document.getElementById("gameFrame").src = "";
+}
+</script>
+
+</body>
+</html>
